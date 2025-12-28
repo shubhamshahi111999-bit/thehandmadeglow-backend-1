@@ -12,7 +12,10 @@ app = FastAPI(title="The Handmade Glow API", version="1.0.0")
 # CORS configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_origins=[
+        "http://localhost:3000",
+        "https://thehandmadeglow-frontend.vercel.app/"
+    ],
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
